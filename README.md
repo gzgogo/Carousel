@@ -11,8 +11,6 @@
 
 2. 定义样式
   ```
-  //父元素的宽度=子元素个数*页面宽度，如父元素包含5个子元素用于切换，则父元素的宽度需设置为500%
-  //父元素的overflow属性需要设置为hidden
   .container{
     width: 500%; 
     height: 50%;
@@ -28,8 +26,12 @@
   }
   ```
   
+  >父元素的宽度=子元素个数*页面宽度，如父元素包含5个子元素用于切换，则父元素的宽度需设置为500%
+  >父元素的overflow属性需要设置为hidden
+  
 3. 调用脚本
   ```
-  //container为父元素的类名，item为子元素的类名，注明类名前没有点“.”
   Carousel("container", "item").bindTouchEvent().setItemChangedHandler(onPageChanged);
   ```
+  
+  >container为父元素的类名，item为子元素的类名，注明类名前没有点“.”
