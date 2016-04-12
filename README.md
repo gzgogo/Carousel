@@ -14,14 +14,14 @@
   .container{
     width: 500%; 
     height: 50%;
-    display: -webkit-box;
+    display: -webkit-box; //注意此处需要使用box布局
     overflow: hidden;
     -webkit-transform: translate3d(0,0,0);
     backface-visibility: hidden;
     position: relative;
   }
   .item{
-    -webkit-box-flex: 1;
+    -webkit-box-flex: 1; //注意此处需要使用box布局
     width: 0;
   }
   ```
