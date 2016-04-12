@@ -39,9 +39,10 @@
 
     var dots = document.querySelectorAll(".page-number div");
     var curDot = dots[0];
-    function onPageChanged(pageIndex) {
+    curDot.className = "active";
+    function onPageChanged(preIndex, curIndex) {
       curDot.className = "";
-      curDot = dots[pageIndex];
+      curDot = dots[curIndex];
       curDot.className = "active";
     }
   </script>
