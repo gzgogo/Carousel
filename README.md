@@ -74,11 +74,11 @@ Carousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChange
 目前该插件未实现循环播放，您可自己实现。大致思路如下：
   1. 滑动子元素`.item`，而不是父元素`.carousel`
   2. 假设子元素`.item`的`width`为375px
-  1. 将当前显示的子元素的`transform`属性设置为`translate3d(0px, 0px, 0px)`，并设置`z-index=10`
-  2. 将下一个子元素的`transform`属性设置为`translate3d(375px, 0px, 0px)`，并设置`z-index=10`
-  3. 将上一个子元素的`transform`属性设置为`translate3d(-375px, 0px, 0px)`，并设置`z-index=10`
-  4. 将其他所有子元素的`transform`属性设置为`translate3d(0px, 0px, 0px)`，并设置`z-index=9`
-  5. 第一个子元素的上一个元素是最后一个元素，最后一个元素的下一个元素是第一个元素
+  3. 将当前显示的子元素的`transform`属性设置为`translate3d(0px, 0px, 0px)`，并设置`z-index=10`
+  4. 将下一个子元素的`transform`属性设置为`translate3d(375px, 0px, 0px)`，并设置`z-index=10`
+  5. 将上一个子元素的`transform`属性设置为`translate3d(-375px, 0px, 0px)`，并设置`z-index=10`
+  6. 将其他所有子元素的`transform`属性设置为`translate3d(0px, 0px, 0px)`，并设置`z-index=9`
+  7. 第一个子元素的上一个元素是最后一个元素，最后一个元素的下一个元素是第一个元素
 
 ## 参考
 [H5单页面手势滑屏切换原理](http://www.cnblogs.com/onepixel/p/5300445.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
