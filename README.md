@@ -11,8 +11,10 @@
   
 #### 2. html结构
 ```
-<div class="carousel-wrapper" > //该级元素是必需的，且要设置其overflow=hidden
-  <div class="carousel" ontouchstart="" > //为该级元素绑定手势事件：touchstart, touchmove, touchend
+<!--该级元素是必需的，且要设置其overflow=hidden-->
+<div class="carousel-wrapper" > 
+  <!--为该级元素绑定手势事件：touchstart, touchmove, touchend-->
+  <div class="carousel" ontouchstart="" > 
     <div class="item" style="background: #3b76c0" >
       <h3 >item-1</h3>
     </div>
