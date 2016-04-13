@@ -72,6 +72,8 @@ Carousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChange
   
 #### 6. 循环播放
 目前该插件未实现循环播放，您可自己实现。大致思路如下：
+  1. 滑动子元素`.item`，而不是父元素`.carousel`
+  2. 假设子元素`.item`的`width`为375px
   1. 将当前显示的子元素的`transform`属性设置为`translate3d(0px, 0px, 0px)`，并设置`z-index=10`
   2. 将下一个子元素的`transform`属性设置为`translate3d(375px, 0px, 0px)`，并设置`z-index=10`
   3. 将上一个子元素的`transform`属性设置为`translate3d(-375px, 0px, 0px)`，并设置`z-index=10`
