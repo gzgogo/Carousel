@@ -6,25 +6,28 @@
     initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=1.0">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body >
 
-  <div id="carousel" class="container" ontouchstart="">
-    <div class="item" style="background: #3b76c0" >
-      <h3 >item-1</h3>
-    </div>
-    <div class="item" style="background: #58c03b;">
-      <h3>item-2</h3>
-    </div>
-    <div class="item" style="background: #c03b25;">
-      <h3>item-3</h3>
-    </div>
-    <div class="item" style="background: #e0a718;">
-      <h3>item-4</h3>
-    </div>
-    <div class="item" style="background: #c03eac;">
-      <h3>item-5</h3>
+  <div class="carousel-wrapper" >
+    <div class="carousel" ontouchstart="" >
+      <div class="item" style="background: #3b76c0" >
+        <h3 >item-1</h3>
+      </div>
+      <div class="item" style="background: #58c03b;">
+        <h3>item-2</h3>
+      </div>
+      <div class="item" style="background: #c03b25;">
+        <h3>item-3</h3>
+      </div>
+      <div class="item" style="background: #e0a718;">
+        <h3>item-4</h3>
+      </div>
+      <div class="item" style="background: #c03eac;">
+        <h3>item-5</h3>
+      </div>
     </div>
   </div>
+
 
   <div class="page-number">
     <div></div>
@@ -33,9 +36,11 @@
     <div></div>
     <div></div>
   </div>
+
+  <div class="content">content</div>
   <script src="lib/carousel.js"></script>
   <script>
-    Carousel("container", "item").bindTouchEvent().setItemChangedHandler(onPageChanged);
+    Carousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChanged);
 
     var dots = document.querySelectorAll(".page-number div");
     var curDot = dots[0];
