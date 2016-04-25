@@ -5,6 +5,35 @@
     <meta name="viewport" charset="utf-8" content="width=device-width,
     initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=1.0">
     <link rel="stylesheet" href="index.css">
+  <style>
+    h3{
+      text-align: center;
+      font-family: Microsoft YaHei,Arial;
+      color: #fff;
+      font-size: 1.7em;
+      font-weight: normal;
+      padding: 1em 0;
+      margin: 0;
+    }
+
+    .content {
+      margin-top: 40px;
+      width: 100%;
+      /*height: 2000px;*/
+      text-align: center;
+      font-size: 36px;
+    }
+
+    .prev {
+      float: left;
+      margin-left: 20px;
+    }
+
+    .next {
+      float: right;
+      margin-right: 20px;
+    }
+  </style>
 </head>
 <body >
 
@@ -37,10 +66,27 @@
     <div></div>
   </div>
 
-  <div class="content">content</div>
+  <div class="option">
+    <div class="prev"><button class="btn-prev">prev</button></div>
+    <div class="next"><button class="btn-next">next</button></div>
+  </div>
+
+  <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem commodi consequatur doloribus est fugiat illum magni nihil obcaecati odio, officia perferendis praesentium quam quas quia quo ratione totam ullam?</div>
+  <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem commodi consequatur doloribus est fugiat illum magni nihil obcaecati odio, officia perferendis praesentium quam quas quia quo ratione totam ullam?</div>
+
   <script src="lib/carousel.js"></script>
   <script>
-    Carousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChanged);
+    var carousel = Carousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChanged);
+
+    var btnPrev = document.querySelector(".btn-prev");
+    btnPrev.addEventListener("click",function () {
+      carousel.prev();
+    });
+
+    var btnPrev = document.querySelector(".btn-next");
+    btnPrev.addEventListener("click",function () {
+      carousel.next();
+    });
 
     var dots = document.querySelectorAll(".page-number div");
     var curDot = dots[0];
