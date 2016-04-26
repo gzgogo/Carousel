@@ -37,23 +37,21 @@
 </head>
 <body >
 
-  <div class="carousel-wrapper" >
-    <div class="carousel" ontouchstart="" >
-      <div class="item" style="background: #3b76c0" >
-        <h3 >item-1</h3>
-      </div>
-      <div class="item" style="background: #58c03b;">
-        <h3>item-2</h3>
-      </div>
-      <div class="item" style="background: #c03b25;">
-        <h3>item-3</h3>
-      </div>
-      <div class="item" style="background: #e0a718;">
-        <h3>item-4</h3>
-      </div>
-      <div class="item" style="background: #c03eac;">
-        <h3>item-5</h3>
-      </div>
+  <div class="carousel" ontouchstart="" >
+    <div class="item" style="background: #3b76c0" >
+      <h3 >item-1</h3>
+    </div>
+    <div class="item" style="background: #58c03b;">
+      <h3>item-2</h3>
+    </div>
+    <div class="item" style="background: #c03b25;">
+      <h3>item-3</h3>
+    </div>
+    <div class="item" style="background: #e0a718;">
+      <h3>item-4</h3>
+    </div>
+    <div class="item" style="background: #c03eac;">
+      <h3>item-5</h3>
     </div>
   </div>
 
@@ -74,9 +72,13 @@
   <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem commodi consequatur doloribus est fugiat illum magni nihil obcaecati odio, officia perferendis praesentium quam quas quia quo ratione totam ullam?</div>
   <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem commodi consequatur doloribus est fugiat illum magni nihil obcaecati odio, officia perferendis praesentium quam quas quia quo ratione totam ullam?</div>
 
+  <script src="lib/LinkList.js"></script>
   <script src="lib/carousel.js"></script>
   <script>
-    var carousel = Carousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChanged);
+
+    var carousel = Carousel("carousel", "item", true)
+            .bindTouchEvent()
+            .setItemChangedHandler(onPageChanged);
 
     var btnPrev = document.querySelector(".btn-prev");
     btnPrev.addEventListener("click",function () {
