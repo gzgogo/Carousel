@@ -11,10 +11,7 @@
   
 #### 2. html结构
 ```
-<!--该级元素是必需的，且要设置其overflow=hidden-->
-<div class="carousel-wrapper" > 
-  <!--为该级元素绑定手势事件：touchstart, touchmove, touchend，并设置其宽度为子元素宽度*子元素个数-->
-  <div class="carousel" ontouchstart="" > 
+<div class="carousel" ontouchstart="" >
     <div class="item" style="background: #3b76c0" >
       <h3 >item-1</h3>
     </div>
@@ -31,39 +28,33 @@
       <h3>item-5</h3>
     </div>
   </div>
-</div>
 ```
 
 #### 3. 定义样式
 ```
-.carousel-wrapper {
-  width: 100%;
+.carousel{
   height: 50%;
+  position: relative;
   overflow: hidden;
 }
 
-.carousel{
-  width: 500%;
+.item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 100%;
-  display: -webkit-box;
-  -webkit-transform: translate3d(0,0,0);
-  backface-visibility: hidden;
-  position: relative;
-}
-
-.item{
-  -webkit-box-flex: 1;
 }
 ```
   
->父元素的宽度=子元素个数*页面宽度，如父元素包含5个子元素用于切换，则父元素的宽度需设置为500%
+>使用绝对定位，使子元素依次重叠在父元素内。
   
 #### 4. 调用脚本
 ```
-Carousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChanged);
+CreateCarousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChanged);
 ```
   
->carousel为父元素的类名，item为子元素的类名，注明类名前没有点“.”
+>carousel为父元素的类名，item为子元素的类名，注意必须使用类名且类名前没有点“.”
   
 #### 5. 原理
 将父级元素`.carousel`的`width`设置为子元素`.item`的宽度*子元素的个数，并将子元素横向依次排列，然后为父元素绑定`touchstart，touchmove，touchend`三个事件，通过计算`pageX`属性(既触摸点在整个父元素的上的位置)来移动`.carousel`元素，`.carousel`元素的移动通过`translate3d`实现，之所以使用3d变换，是为了充分利用GPU以提高性能。在实现的过程中，有两点需要特别注意：
@@ -71,10 +62,9 @@ Carousel("carousel", "item").bindTouchEvent().setItemChangedHandler(onPageChange
   2. 必须为`.carousel`元素的父元素`.carousel-wrapper`设置`overflow: hidden`属性，并设置其`width`为子元素`.item`的`width`，否则整个页面会横向滚动。
   
 #### 6. 循环播放
-目前该插件未实现循环播放，您可自己实现。大致思路如下：
-  1. 假设子元素`.item`的`width`为375px
+  1. 假设子元素`.item`的`width`为375px，使用绝对定位将所有子元素放在父元素内
   2. 将父元素`.carousel`的`width`设置为375px，与子元素`.item`宽度相同
-  3. 设置子元素`.item`的移动变换，而不是父元素`.carousel`
+  3. 手指在子元素`.item`上滑动时，通过`transform`属性移动`.item`的移动变换，而不是父元素`.carousel`
   4. 将当前显示的子元素的`transform`属性设置为`translate3d(0px, 0px, 0px)`，并设置`z-index=10`
   5. 将下一个子元素的`transform`属性设置为`translate3d(375px, 0px, 0px)`，并设置`z-index=10`
   6. 将上一个子元素的`transform`属性设置为`translate3d(-375px, 0px, 0px)`，并设置`z-index=10`
