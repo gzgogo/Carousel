@@ -77,26 +77,26 @@ CreateCarousel("carousel", "item", true).bindTouchEvent().setItemChangedHandler(
 
 #### 6. 方法介绍
 
-##### CreateCarousel(containerClass, itemClass, loop)
-创建轮播组件，该方法会返回一个对象，假设命名为`carousel`，后面介绍的方法都是该对象的成员方法。
+##### `CreateCarousel(containerClass, itemClass, loop)`
+创建轮播组件，该方法会返回一个对象，假设命名为`carousel`，后面介绍的方法都是该对象的成员方法。 
 
-`containerClass`: 父元素的类名
-`itemClass`: 子元素的类名
-`loop`: 是否循环播放
+`containerClass`: 父元素的类名 
+`itemClass`: 子元素的类名 
+`loop`: 是否循环播放 
 
-##### bindTouchEvent
-绑定触摸事件，使元素可以跟随手指滑动，carousel的成员方法
+##### `bindTouchEvent`
+绑定触摸事件，使元素可以跟随手指滑动，`carousel`的成员方法
 
-##### prev
-滑动到上一元素，carousel的成员方法
+##### `prev`
+滑动到上一元素，`carousel`的成员方法
 
-##### next
-滑动到下一元素，carousel的成员方法
+##### `next`
+滑动到下一元素，`carousel`的成员方法
 
-##### setItemChangedHandler(itemChangedHandler)
-设置元素切换后的回调，该回调函数接收两个参数：pervIndex,curIndex
-`pervIndex`: 之前显示元素的索引
-`curIndex`:  当前显示元素的索引
+##### `setItemChangedHandler(itemChangedHandler)`
+设置元素切换后的回调，该回调函数接收两个参数：`pervIndex`, `curIndex` 
+`pervIndex`: 之前显示元素的索引 
+`curIndex`:  当前显示元素的索引 
   
 #### 7. 参考Demo的注意事项
 将父级元素`.carousel`的`width`设置为子元素`.item`的宽度*子元素的个数，并将子元素横向依次排列，然后为父元素绑定`touchstart，touchmove，touchend`三个事件，通过计算`pageX`属性(既触摸点在整个父元素的上的位置)来移动`.carousel`元素，`.carousel`元素的移动通过`translate3d`实现，之所以使用3d变换，是为了充分利用GPU以提高性能。在实现的过程中，有两点需要特别注意：
