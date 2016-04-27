@@ -104,3 +104,4 @@ CreateCarousel("carousel", "item", true).bindTouchEvent().setItemChangedHandler(
 
 ## 参考
 [H5单页面手势滑屏切换原理](http://www.cnblogs.com/onepixel/p/5300445.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+[如何用H5实现一个触屏版的轮播器？](http://www.jianshu.com/p/abb0e3575c70)
