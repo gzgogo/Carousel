@@ -60,7 +60,7 @@ CreateCarousel("carousel", "item", true).bindTouchEvent().setItemChangedHandler(
   1. 假设子元素`.item`的`width`为375px，使用绝对定位将所有子元素放在父元素内
   2. 将父元素`.carousel`的`width`设置为375px，与子元素`.item`宽度相同
   3. 为父元素`.carousel`添加触摸事件：`touchstart`, `touchmove`, `touchend`
-  4. 手指按下时，保存初始位置（clientX），
+  4. 手指按下时，保存初始位置（`clientX`）
   5. 手指滑动时，通过滑动距离判断滑动的方向：
     1. 手指向左滑动，则同时移动当前元素和当前元素右边的元素
     2. 手指向右滑动，则同时移动当前元素和当前元素左边的元素
