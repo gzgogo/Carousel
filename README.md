@@ -79,7 +79,6 @@ CreateCarousel("carousel", "item", true).bindTouchEvent().setItemChangedHandler(
 
 ##### `CreateCarousel(containerClass, itemClass, loop)`
 创建轮播组件，该方法会返回一个对象，假设命名为`carousel`，后面介绍的方法都是该对象的成员方法。 
-
 `containerClass`: 父元素的类名  
 `itemClass`: 子元素的类名  
 `loop`: 是否循环播放  
